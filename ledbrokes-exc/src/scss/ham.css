@@ -1,0 +1,51 @@
+#ham-wrp {
+  width: 100%;
+  height: 45px;
+  border-bottom: 1px solid #eee;
+  position: absolute;
+  background-color: #fff;
+  z-index: 2;
+  display: block; }
+  @media (min-width: 375px) {
+    #ham-wrp {
+      display: none; } }
+
+.ham-icon-span-wrp {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  cursor: pointer;
+  transform: scale(0.5); }
+  #mob-menu-toggle:checked ~ #ham-wrp .ham-icon-span-wrp {
+    transform: scale(0.375); }
+  .ham-icon-span-wrp span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all .25s ease-in-out;
+    background-color: #999;
+    transform-origin: left center; }
+    #mob-menu-toggle:checked ~ #ham-wrp .ham-icon-span-wrp span {
+      background-color: #e6e6e6; }
+    .ham-icon-span-wrp span:nth-child(1) {
+      top: 0px; }
+      #mob-menu-toggle:checked ~ #ham-wrp .ham-icon-span-wrp span:nth-child(1) {
+        transform: rotate(45deg);
+        top: -3px;
+        left: 8px; }
+    .ham-icon-span-wrp span:nth-child(2) {
+      top: 18px; }
+      #mob-menu-toggle:checked ~ #ham-wrp .ham-icon-span-wrp span:nth-child(2) {
+        width: 0%;
+        opacity: 0; }
+    .ham-icon-span-wrp span:nth-child(3) {
+      top: 36px; }
+      #mob-menu-toggle:checked ~ #ham-wrp .ham-icon-span-wrp span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 39px;
+        left: 8px; }

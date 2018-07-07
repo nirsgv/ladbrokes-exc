@@ -1,0 +1,105 @@
+@import "constants.scss";
+
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: #eee;
+  top: $ham-sect-height;
+  @media (min-width: $menu-break) {
+    top: 0;
+    height: 80px;
+    position: fixed;
+    z-index: 10;
+    background-color: #fff;
+    box-shadow: 0px 0px 4px #999999aa;
+  }
+  @media (min-width: $tab-break) {
+    height: 60px;
+  }
+  nav#top-menu {
+    @media (min-width: $menu-break) {
+      height: inherit;
+    }
+    ul.top-menu-items {
+      text-align: left;
+      display: grid;
+      grid-gap: 0 0;
+      width: 100%;
+      grid-template-columns: 1fr;
+      @media (min-width: $menu-break) {
+        height: inherit;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0 30px;
+
+      }
+      li.top-menu-item {
+        display: block;
+        position: relative;
+        height: 80px;
+        padding: 0;
+        border-bottom: 1px solid #fbfbfb;
+        text-align: left;
+        background-color: #fff;
+        @media (min-width: $menu-break) {
+          background-color: transparent;
+          display: inline-block;
+          height: auto;
+          padding: 0;
+          border-bottom: none;
+        }
+        .top-menu-item-link {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          padding: 27px 0 0 16px;
+          @media (min-width: $menu-break) {
+            padding: 18px 0 0 16px;
+            text-align: left;
+          }
+          @media (min-width: $tab-break) {
+            padding: 18px 0 0 0;
+            text-align: center;
+          }
+          span {
+            position: relative;
+            background: -webkit-linear-gradient(left, #556270, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-attachment: fixed;
+            font-size: 1.8rem;
+            @media (min-width: $menu-break) {
+              font-size: 1.6rem;
+            }
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: -8px;
+              width: 16px;
+              height: 4px;
+              left: 0;
+              border-radius: 4px;
+              transition: width 0.2s ease-out,
+              background-color 0.2s ease-out;
+              background-color: gradient(left, #556270, #ff6b6b);
+              @media (min-width: $menu-break) {
+                background-color: #eee;
+              }
+            }
+          }
+        }
+        @media (min-width: $menu-break) {
+          &:hover span:after {
+            width: 100%;
+            background-color: #ddd;
+          }
+          &:active span:after {
+            background-color: #bbb;
+          }
+        }
+      }
+    }
+  }
+}
